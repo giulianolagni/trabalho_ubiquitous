@@ -1,0 +1,28 @@
+# --- Sistema e VS Code ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.pytest_cache/
+
+# --- Go ---
+# Binários compilados (windows e linux)
+*.exe
+*.test
+*.out
+# O binário que criamos no Dockerfile chama-se 'server', vamos ignorar caso compiles localmente
+server
+main
+
+# --- Docker e Banco de Dados ---
+postgres_data/
+pgadmin/
+*.log
