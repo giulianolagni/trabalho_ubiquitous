@@ -16,7 +16,9 @@ DB_NAME = os.getenv("DB_NAME", "users_db")
 DATABASE_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:5432/{DB_NAME}"
 
 # Engine com configurações de pool para aguentar carga
-engine = create_async_engine(DATABASE_URL, echo=False, pool_size=20, max_overflow=10)
+# MELHORIA 3: Aumentar pool_size (era 20) e max_overflow (era 10)
+# Com 4 réplicas, teremos 4 * 50 = 200 conexões (cabe folgado nas 1000 do banco)
+engine = create_async_engine(DATABASE_URL, echo=False, pool_size=50, max_overflow=20)
 AsyncSessionLocal = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 Base = declarative_base()
 

@@ -54,17 +54,13 @@ func connectDatabase() {
 	db.AutoMigrate(&User{})
 
 	// --- PERFORMANCE TUNING ---
-	// Obtém a instância genérica do banco SQL para configurar o pool
-	sqlDB, _ := db.DB()
+// --- PERFORMANCE TUNING ---
+    sqlDB, _ := db.DB()
 
-	// Define o número máximo de conexões inativas no pool
-	sqlDB.SetMaxIdleConns(10)
-
-	// Define o número máximo de conexões abertas (ajuda a não estourar o banco sob estresse)
-	sqlDB.SetMaxOpenConns(100)
-
-	// Tempo máximo que uma conexão pode ser reutilizada
-	sqlDB.SetConnMaxLifetime(time.Hour)
+    // MELHORIA 4: Aumentar conexões em espera e máximas
+    sqlDB.SetMaxIdleConns(20)   // Era 10
+    sqlDB.SetMaxOpenConns(80)   // Era 100 (Reduzi um pouco por segurança pois temos 4 replicas: 4*80=320)
+    sqlDB.SetConnMaxLifetime(time.Hour)
 }
 
 // --- 3. Handlers (Funções das Rotas) ---
