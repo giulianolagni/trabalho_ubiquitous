@@ -1,0 +1,50 @@
+{
+  "Go APi" : {
+    "transaction" : "Go APi",
+    "sampleCount" : 200000,
+    "errorCount" : 1658,
+    "errorPct" : 0.829,
+    "meanResTime" : 110.27275499999904,
+    "medianResTime" : 43.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 43482.0,
+    "pct1ResTime" : 62.0,
+    "pct2ResTime" : 64.0,
+    "pct3ResTime" : 66.0,
+    "throughput" : 3120.3195207189215,
+    "receivedKBytesPerSec" : 819.8092875335434,
+    "sentKBytesPerSec" : 374.7188055806914
+  },
+  "Python API" : {
+    "transaction" : "Python API",
+    "sampleCount" : 200000,
+    "errorCount" : 2005,
+    "errorPct" : 1.0025,
+    "meanResTime" : 219.38127499999945,
+    "medianResTime" : 44.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 43651.0,
+    "pct1ResTime" : 64.0,
+    "pct2ResTime" : 65.0,
+    "pct3ResTime" : 67.0,
+    "throughput" : 3118.665211289568,
+    "receivedKBytesPerSec" : 807.8546659373538,
+    "sentKBytesPerSec" : 385.9250740682988
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 400000,
+    "errorCount" : 3663,
+    "errorPct" : 0.91575,
+    "meanResTime" : 164.8270149999998,
+    "medianResTime" : 29.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 43651.0,
+    "pct1ResTime" : 41.0,
+    "pct2ResTime" : 43.0,
+    "pct3ResTime" : 45.0,
+    "throughput" : 6237.23316336873,
+    "receivedKBytesPerSec" : 1627.2039391294772,
+    "sentKBytesPerSec" : 760.433356138217
+  }
+}
